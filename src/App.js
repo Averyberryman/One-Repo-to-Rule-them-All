@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { fetchBooks, fetchMovies } from './APICalls'
+import BookCard from './Components/BookCard/BookCard'
+import MovieCard from './Components/MovieCard/MovieCard'
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -9,16 +11,20 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([fetchBooks(), fetchMovies()])
-      .then(([booksData, moviesData]) => {
+    async function fetchData() {
+      try {
+        const booksData = await fetchBooks();
+        const moviesData = await fetchMovies();
         setBooks(booksData);
         setMovies(moviesData);
         setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error:', error);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
         setLoading(false);
-      });
+      }
+    }
+
+    fetchData();
   }, []);
 
   return (
@@ -31,37 +37,21 @@ function App() {
         ) : (
           <div>
             <p>Books:</p>
-            <ul>
+            <div>
               {books.map(book => (
-                <li key={book._id}>{book.name}</li>
+                <BookCard key={book._id} book={book} />
               ))}
-            </ul>
+            </div>
             
             <p>Movies:</p>
             <div>
               {movies.map(movie => (
-                <div key={movie._id} className="movie-card">
-                  <h3>{movie.name}</h3>
-                  <p><strong>Runtime:</strong> {movie.runtimeInMinutes} minutes</p>
-                  <p><strong>Budget:</strong> ${movie.budgetInMillions} million</p>
-                  <p><strong>Box Office Revenue:</strong> ${movie.boxOfficeRevenueInMillions} million</p>
-                  <p><strong>Academy Award Nominations:</strong> {movie.academyAwardNominations}</p>
-                  <p><strong>Academy Award Wins:</strong> {movie.academyAwardWins}</p>
-                  <p><strong>Rotten Tomatoes Score:</strong> {movie.rottenTomatoesScore}%</p>
-                </div>
+                <MovieCard key={movie._id} movie={movie} />
               ))}
             </div>
           </div>
         )}
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
