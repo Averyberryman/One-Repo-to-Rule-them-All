@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { fetchBooks, fetchMovies } from './APICalls'
-import BookCard from './Components/BookCard/BookCard'
-import MovieCard from './Components/MovieCard/MovieCard'
+import { fetchBooks, fetchMovies } from './APICalls';
+import AllBooks from './Components/AllBooks/AllBooks'
+import AllMovies from './Components/AllMovies/AllMovies';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -31,30 +31,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-
+        
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div>
-            <p>Books:</p>
-            <div>
-              {books.map(book => (
-                <BookCard key={book._id} book={book} />
-              ))}
-            </div>
-            
-            <p>Movies:</p>
-            <div>
-              {movies.map(movie => (
-                <MovieCard key={movie._id} movie={movie} />
-              ))}
-            </div>
-          </div>
+          <>
+            <AllBooks books={books} />
+            <AllMovies movies={movies} />
+          </>
         )}
-
       </header>
     </div>
   );
 }
 
 export default App;
+
