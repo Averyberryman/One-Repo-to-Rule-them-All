@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './BookCard.css'
 
 function BookCard({ book }) {
   return (
     <div className="book-card">
-      <h3>{book.name}</h3>
-      {/* You can add other details about the book if needed */}
+      <Link to={`/book/${book._id}`}>
+        <h3>{book.name}</h3>
+      </Link>
     </div>
   );
 }
