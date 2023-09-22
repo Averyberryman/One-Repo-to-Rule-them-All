@@ -1,4 +1,5 @@
 import React from 'react';
+import './BookCard.css'
 
 function BookCard({ book }) {
   return (
