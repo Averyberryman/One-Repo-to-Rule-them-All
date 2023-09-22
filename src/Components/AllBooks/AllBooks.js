@@ -4,6 +4,7 @@ import './AllBooks.css';
 
 function AllBooks({ books }) {
   return (
+    <div className='book-container'>
     <div className="all-books-container">
       <h2>Books</h2>
       <div className="books-grid">
@@ -11,6 +12,7 @@ function AllBooks({ books }) {
           <BookCard key={book._id} book={book} />
         ))}
       </div>
+    </div>
     </div>
   );
 }
