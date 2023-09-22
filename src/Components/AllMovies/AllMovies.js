@@ -1,20 +1,18 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './AllMovies.css';
+import { Link } from 'react-router-dom'
 
 function AllMovies({ movies }) {
-  return (
-    <div className='movies-container'>
-    <div className="all-movies-container">
-      <h2>Movies</h2>
-      <div className="movies-grid">
-        {movies.map(movie => (
-          <MovieCard key={movie._id} movie={movie} />
-        ))}
-      </div>
-    </div>
-    </div>
-  );
+    return (
+        <div className="movies-container">
+          {movies.map(movie => (
+            <Link to={`/movie/${movie._id}`} key={movie._id}>
+              <MovieCard movie={movie} />
+            </Link>
+          ))}
+        </div>
+      );
 }
 
 export default AllMovies;

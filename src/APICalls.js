@@ -46,8 +46,8 @@ const fetchMovies = () => {
       .then((data) => data.docs);
   };
   
-  const fetchSingleBook = () => {
-    return fetch("https://the-one-api.dev/v2//book/{id}", {
+  const fetchSingleBook = (id) => {
+    return fetch(`https://the-one-api.dev/v2//book/${id}`, {
       method: "GET",
       headers: {
         Authorization: "Bearer K3m5T73Vg2q5K_ovcn6M",
@@ -62,8 +62,8 @@ const fetchMovies = () => {
       .then((data) => data.docs);
   };
 
-  const fetchSingleMovie = () => {
-    return fetch("https://the-one-api.dev/v2/movie/{id}", {
+  const fetchSingleMovie = (id) => {
+    return fetch(`https://the-one-api.dev/v2/movie/${id}`, {
       method: "GET",
       headers: {
         Authorization: "Bearer K3m5T73Vg2q5K_ovcn6M",
@@ -78,8 +78,8 @@ const fetchMovies = () => {
       .then((data) => data.docs);
   };
 
-  const fetchSingleCharacter = () => {
-    return fetch("https://the-one-api.dev/v2/character/{id}", {
+  const fetchSingleCharacter = (id) => {
+    return fetch(`https://the-one-api.dev/v2/character/${id}`, {
       method: "GET",
       headers: {
         Authorization: "Bearer K3m5T73Vg2q5K_ovcn6M",
