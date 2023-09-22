@@ -46,7 +46,7 @@ function App() {
               loading ? (
                 <p>Loading...</p>
               ) : (
-                <div className="App-header">
+                <div className="App-body">
                   <AllMovies movies={movies} />
                   <AllBooks books={books} />
                   <AllCharacters characters={characters} />

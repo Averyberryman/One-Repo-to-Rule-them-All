@@ -5,7 +5,7 @@
     border-radius: 5px;
     max-width: 250px;
     text-decoration: none;
-    color: inherit;
+    background-color: black;
     display: block; 
   }
   
@@ -23,8 +23,8 @@
   }
   
   .character-card .card-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit;        /* Make the color inherit from parent or set a specific color */
-    display: block;        /* Make the link block level to cover entire area of the card */
+    text-decoration: none; 
+    color: inherit;    
+    display: block;    
   }
   

@@ -9,18 +9,34 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 15vh;
+  background-image: url('https://media.moddb.com/images/groups/1/2/1488/auto/the20fellowship.gif');
+  background-size: contain;
+  background-position: bottom;
+  background-color: #f3f3f3; 
+  background-size: cover;  /* This ensures the image covers the entire header */
+  background-repeat: no-repeat; 
+  background-position: center center; /* You can adjust this to align the image as desired */
+  height: 20vh; /* This sets the header height to 20% of the viewport height */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  gap: 2rem
+  color: gold;
+  gap: 2rem;
 }
 
-main {
+.App-header h1 {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 20vh;
+    max-width: 100vh;
+    background-color: rgba(10, 59, 10, 0.611);
+    opacity: 100%;
+}
+
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -29,8 +45,34 @@ main {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  gap: 2rem
+  gap: 2rem;
+  background-image: url('https://cdna.artstation.com/p/assets/images/images/052/615/540/large/aditya-singh-ring-232.jpg?1660238571');  /* Add this if you're using a background image */
+  background-color: #f3f3f3; 
+  background-size: cover;  
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center center; 
 }
+
+/* main {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  gap: 2rem;
+  background-image: url('https://static.wikia.nocookie.net/villains/images/4/42/Dragon_of_the_First_Age_by_rubendevela.jpg/revision/latest/scale-to-width-down/1200?cb=20230427180131');  
+  background-color: #f3f3f3; 
+  background-size: cover;   
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center center; 
+}
+*/
+
 
 .book-container,
 .movies-container,
@@ -40,6 +82,9 @@ main {
   border-radius: 8px;
   width: 330px;  
   overflow-y: auto;
+  background-color: #282c34;
+  opacity: 80%;
+  margin-top: 75px;
 }
 
 .character-container {
@@ -79,4 +124,9 @@ main {
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  max-width: 100%;
+  max-height: 100%;
 }
