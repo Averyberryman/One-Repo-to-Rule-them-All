@@ -1,0 +1,21 @@
+.character-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    max-width: 250px;
+  }
+  
+  .character-card h3 {
+    margin-top: 0;
+  }
+  
+  .character-card a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  .character-card a:hover {
+    text-decoration: underline;
+  }
+  
