@@ -4,6 +4,9 @@
     margin: 10px;
     border-radius: 5px;
     max-width: 250px;
+    text-decoration: none;
+    color: inherit;
+    display: block; 
   }
   
   .character-card h3 {
@@ -17,5 +20,11 @@
   
   .character-card a:hover {
     text-decoration: underline;
+  }
+  
+  .character-card .card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit;        /* Make the color inherit from parent or set a specific color */
+    display: block;        /* Make the link block level to cover entire area of the card */
   }
   
