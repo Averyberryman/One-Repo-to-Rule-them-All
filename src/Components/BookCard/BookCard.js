@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './BookCard.css'
+import PropTypes from 'prop-types'
 
 function BookCard({ book, favoriteIds, onToggleFavorite }) {
   const isFavorite = favoriteIds.has(book._id);
@@ -16,5 +17,14 @@ function BookCard({ book, favoriteIds, onToggleFavorite }) {
     </div>
   );
 }
+
+BookCard.propTypes = {
+  book: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  favoriteIds: PropTypes.object.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired
+};
 
 export default BookCard;

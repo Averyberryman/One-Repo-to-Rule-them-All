@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './MovieCard.css'
+import PropTypes from 'prop-types'
 
 function MovieCard({ movie, favoriteIds, onToggleFavorite }) {
   const isFavorite = favoriteIds.has(movie._id);
@@ -24,6 +25,15 @@ function MovieCard({ movie, favoriteIds, onToggleFavorite }) {
     </div>
   );
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  favoriteIds: PropTypes.object.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired
+};
 
 export default MovieCard;
 
