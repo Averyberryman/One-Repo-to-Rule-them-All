@@ -9,12 +9,20 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MovieDetail from "./Components/MovieDetails/MovieDetails";
 import CharacterDetail from "./Components/CharacterDetails/CharacterDetails";
 import BookDetail from "./Components/BookDetails/BookDetails";
+import SearchComponent from "./Components/Search/Search";
 
 function App() {
   const [books, setBooks] = useState([]);
   const [movies, setMovies] = useState([]);
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredMovies = movies.filter(movie => movie.name && movie.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredBooks = books.filter(book => book.name && book.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredCharacters = characters.filter(character => character.name && character.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  
+
 
   useEffect(() => {
     async function fetchData() {
@@ -39,6 +47,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <SearchComponent onSearch={setSearchTerm} />
         <Routes>
           <Route
             path="/"
@@ -46,10 +55,10 @@ function App() {
               loading ? (
                 <p>Loading...</p>
               ) : (
-                <div className="App-header">
-                  <AllMovies movies={movies} />
-                  <AllBooks books={books} />
-                  <AllCharacters characters={characters} />
+                <div className="App-body">
+                  <AllMovies movies={filteredMovies} />
+                  <AllBooks books={filteredBooks} />
+                  <AllCharacters characters={filteredCharacters} />
                 </div>
               )
             }
