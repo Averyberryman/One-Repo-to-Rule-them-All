@@ -10,6 +10,7 @@ import MovieDetail from "./Components/MovieDetails/MovieDetails";
 import CharacterDetail from "./Components/CharacterDetails/CharacterDetails";
 import BookDetail from "./Components/BookDetails/BookDetails";
 import SearchComponent from "./Components/Search/Search";
+import FavoritesPage from "./Components/FavoritesPage/FavoritesPage";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -17,12 +18,31 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [favoriteIds, setFavoriteIds] = useState(new Set());
 
-  const filteredMovies = movies.filter(movie => movie.name && movie.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  const filteredBooks = books.filter(book => book.name && book.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  const filteredCharacters = characters.filter(character => character.name && character.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  
+  const toggleFavorite = (id) => {
+    const newFavorites = new Set(favoriteIds);
+    if (newFavorites.has(id)) {
+      newFavorites.delete(id);
+    } else {
+      newFavorites.add(id);
+    }
+    setFavoriteIds(newFavorites);
+  };
 
+  const filteredMovies = movies.filter(
+    (movie) =>
+      movie.name && movie.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredBooks = books.filter(
+    (book) =>
+      book.name && book.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredCharacters = characters.filter(
+    (character) =>
+      character.name &&
+      character.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   useEffect(() => {
     async function fetchData() {
@@ -56,9 +76,21 @@ function App() {
                 <p>Loading...</p>
               ) : (
                 <div className="App-body">
-                  <AllMovies movies={filteredMovies} />
-                  <AllBooks books={filteredBooks} />
-                  <AllCharacters characters={filteredCharacters} />
+                  <AllMovies
+                    movies={filteredMovies}
+                    favoriteIds={favoriteIds}
+                    onToggleFavorite={toggleFavorite}
+                  />
+                  <AllBooks
+                    books={filteredBooks}
+                    favoriteIds={favoriteIds}
+                    onToggleFavorite={toggleFavorite}
+                  />
+                  <AllCharacters
+                    characters={filteredCharacters}
+                    favoriteIds={favoriteIds}
+                    onToggleFavorite={toggleFavorite}
+                  />
                 </div>
               )
             }
@@ -66,6 +98,18 @@ function App() {
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
           <Route path="/book/:id" element={<BookDetail />} />
+          <Route
+            path="/favorites"
+            element={
+              <FavoritesPage
+                books={books}
+                characters={characters}
+                movies={movies}
+                favoriteIds={favoriteIds}
+                onToggleFavorite={toggleFavorite}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>
