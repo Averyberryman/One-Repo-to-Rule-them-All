@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './Search.css'
 
-function Search({ onSearch }) {
-  const [query, setQuery] = useState('');
-
-  const handleSearch = () => {
-    onSearch(query);
-  };
-
-  return (
-    <div className="search-component">
-      <input 
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search..."
-      />
-      <button onClick={handleSearch}>Search</button>
-    </div>
-  );
+function SearchComponent({ onSearch }) {
+    return (
+        <div className="search-component">
+            <input 
+                type="text" 
+                placeholder="Search movies, books, characters..." 
+                onChange={e => onSearch(e.target.value)}
+            />
+        </div>
+    );
 }
 
-export default Search;
+export default SearchComponent;
