@@ -1,0 +1,30 @@
+.search-component {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: black;
+}
+
+.search-component input {
+    width: 80%;  
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;  
+    background-color: rgba(255, 255, 255, 0.1);  
+    color: white;
+    font-size: 1rem;
+    outline: none;  
+    transition: background-color 0.3s ease;  
+}
+
+.search-component input::placeholder {
+    color: rgba(255, 255, 255, 0.5);  
+}
+
+.search-component input:focus {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.search-component input:hover {
+    background-color: rgba(255, 255, 255, 0.15);  
+}
