@@ -1,0 +1,9 @@
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between the cards */
+  }
+
+  h2 {
+    color: gold;
+  }

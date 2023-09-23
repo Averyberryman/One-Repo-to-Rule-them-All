@@ -34,6 +34,8 @@
   max-width: 100vh;
   background-color: rgba(10, 59, 10, 0.611);
   opacity: 100%;
+  color: gold;
+  text-decoration: none
 }
 
 .App-body {
@@ -140,4 +142,17 @@ body {
 
 .search-component input:hover {
   background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.favorite-button {
+  background-color: #333; 
+  color: #fff;            
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  background-color: #555;
 }
