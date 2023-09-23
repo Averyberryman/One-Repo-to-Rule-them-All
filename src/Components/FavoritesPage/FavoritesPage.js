@@ -3,6 +3,7 @@ import BookCard from '../BookCard/BookCard';
 import MovieCard from '../MovieCard/MovieCard';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import './FavoritesPage.css';
+import PropTypes from 'prop-types'
 
 function FavoritesPage({ books, characters, movies, favoriteIds, onToggleFavorite }) {
     const favoriteBooks = books.filter(book => favoriteIds.has(book._id));
@@ -29,5 +30,13 @@ function FavoritesPage({ books, characters, movies, favoriteIds, onToggleFavorit
         </div>
     );
 }
+
+FavoritesPage.propTypes = {
+    books: PropTypes.arrayOf(PropTypes.object).isRequired,
+    characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+    movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+    favoriteIds: PropTypes.object.isRequired,
+    onToggleFavorite: PropTypes.func.isRequired
+  };
 
 export default FavoritesPage;

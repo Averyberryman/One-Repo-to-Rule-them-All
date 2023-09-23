@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CharacterCard.css";
+import PropTypes from 'prop-types'
 
 function CharacterCard({ character, favoriteIds, onToggleFavorite }) {
   const isFavorite = favoriteIds.has(character._id);
@@ -25,5 +26,16 @@ function CharacterCard({ character, favoriteIds, onToggleFavorite }) {
     </div>
   );
 }
+
+CharacterCard.propTypes = {
+  character: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    race: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired
+  }).isRequired,
+  favoriteIds: PropTypes.object.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired
+};
 
 export default CharacterCard;

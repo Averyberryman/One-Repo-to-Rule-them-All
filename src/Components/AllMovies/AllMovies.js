@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './AllMovies.css';
+import PropTypes from 'prop-types'
 
 function AllMovies({ movies, favoriteIds, onToggleFavorite }) {
     return (
@@ -15,4 +16,10 @@ function AllMovies({ movies, favoriteIds, onToggleFavorite }) {
     );
 }
 
+AllMovies.propTypes = {
+    movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+    favoriteIds: PropTypes.object.isRequired,
+    onToggleFavorite: PropTypes.func.isRequired
+  };
+  
 export default AllMovies;

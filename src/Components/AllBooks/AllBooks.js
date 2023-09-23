@@ -1,6 +1,7 @@
 import React from 'react';
 import BookCard from '../BookCard/BookCard';
 import './AllBooks.css';
+import PropTypes from 'prop-types'
 
 function AllBooks({ books, favoriteIds, onToggleFavorite }) {
   return (
@@ -16,5 +17,12 @@ function AllBooks({ books, favoriteIds, onToggleFavorite }) {
     </div>
   );
 }
+
+
+AllBooks.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  favoriteIds: PropTypes.object.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired
+};
 
 export default AllBooks;
