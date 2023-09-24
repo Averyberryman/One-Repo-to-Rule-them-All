@@ -19,7 +19,7 @@ function CharacterDetail() {
         }
       } catch (error) {
         console.error("Failed to fetch character:", error);
-        setError(error.message);  // Setting error to the state
+        setError(error.message);
       }
     };
     fetchData();

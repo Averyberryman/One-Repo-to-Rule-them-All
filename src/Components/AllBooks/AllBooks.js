@@ -1,28 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import BookCard from '../BookCard/BookCard';
 import ErrorComponent from "../ErrorPage/ErrorPage";
 import './AllBooks.css';
 import PropTypes from 'prop-types';
-import { fetchBooks } from "../../APICalls";
 
-function AllBooks({ favoriteIds, onToggleFavorite }) {
-    const [books, setBooks] = useState([]);
-    const [error, setError] = useState(null);
+function AllBooks({ books, favoriteIds, onToggleFavorite }) {
 
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const data = await fetchBooks();
-          setBooks(data);
-        } catch (error) {
-          setError(error.message);
-        }
-      }
-      fetchData();
-    }, []);
-
-    if (error) {
-        return <ErrorComponent message={error} />;
+    if (!books) {
+        return <ErrorComponent message="No books available." />;
     }
 
     return (
@@ -38,8 +23,9 @@ function AllBooks({ favoriteIds, onToggleFavorite }) {
 }
 
 AllBooks.propTypes = {
+    books: PropTypes.array.isRequired,
     favoriteIds: PropTypes.object.isRequired,
     onToggleFavorite: PropTypes.func.isRequired
 };
-  
+
 export default AllBooks;

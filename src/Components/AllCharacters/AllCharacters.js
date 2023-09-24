@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import ErrorComponent from "../ErrorPage/ErrorPage";
 import PropTypes from 'prop-types';
-import { fetchCharacter } from "../../APICalls";
 
-function AllCharacters({ favoriteIds, onToggleFavorite }) {
-    const [characters, setCharacters] = useState([]);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const data = await fetchCharacter();
-          setCharacters(data);
-        } catch (error) {
-          setError(error.message);
-        }
-      }
-      fetchData();
-    }, []);
+function AllCharacters({ characters, favoriteIds, onToggleFavorite }) {
 
     characters.forEach(character => {
       if (character.gender === undefined) {
@@ -26,8 +11,8 @@ function AllCharacters({ favoriteIds, onToggleFavorite }) {
       }
     });
 
-    if (error) {
-        return <ErrorComponent message={error} />;
+    if (!characters) {
+        return <ErrorComponent message="No characters available." />;
     }
 
     return (
@@ -43,6 +28,7 @@ function AllCharacters({ favoriteIds, onToggleFavorite }) {
 }
 
 AllCharacters.propTypes = {
+    characters: PropTypes.array.isRequired,
     favoriteIds: PropTypes.object.isRequired,
     onToggleFavorite: PropTypes.func.isRequired
 };

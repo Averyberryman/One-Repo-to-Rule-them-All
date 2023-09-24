@@ -1,0 +1,42 @@
+{
+    "docs": [
+        {
+            "_id": "5cd99d4bde30eff6ebccfbbe",
+            "height": "",
+            "race": "Human",
+            "gender": "Female",
+            "birth": "",
+            "spouse": "Belemir",
+            "death": "",
+            "realm": "",
+            "hair": "",
+            "name": "Adanel",
+            "wikiUrl": "http://lotr.wikia.com//wiki/Adanel"
+        },
+        {
+            "_id": "5cd99d4bde30eff6ebccfbbf",
+            "height": "",
+            "race": "Human",
+            "gender": "Male",
+            "birth": "Before ,TA 1944",
+            "spouse": "",
+            "death": "Late ,Third Age",
+            "realm": "",
+            "hair": "",
+            "name": "Adrahil I",
+            "wikiUrl": "http://lotr.wikia.com//wiki/Adrahil_I"
+        },
+        {
+            "_id": "5cd99d4bde30eff6ebccfbc0",
+            "height": "",
+            "race": "Human",
+            "gender": "Male",
+            "birth": "TA 2917",
+            "spouse": "Unnamed wife",
+            "death": "TA 3010",
+            "realm": "",
+            "hair": "",
+            "name": "Adrahil II",
+            "wikiUrl": "http://lotr.wikia.com//wiki/Adrahil_II"
+        }]
+}
