@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { fetchSingleMovie } from '../../APICalls';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchSingleMovie } from "../../APICalls";
+import ErrorComponent from "../ErrorPage/ErrorPage";
 
 function MovieDetail() {
-  const [movie, setMovie] = useState(null);
-  const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  const [movie, setMovie] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const data = await fetchSingleMovie(id);
-        setMovie(data[0]);
-        setLoading(false);
+        if (data && data.length > 0) {
+          setMovie(data[0]);
+        } else {
+          throw new Error("Movie not found");
+        }
       } catch (error) {
         console.error("Failed to fetch movie:", error);
-        setLoading(false);
+        setError(error.message);
       }
     }
-
     fetchData();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (!movie) return <p>No movie found</p>;
+  if (error) {
+    return <ErrorComponent message={error} />;
+  }
+
+  if (!movie) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="movie-detail-container">

@@ -7,7 +7,7 @@ const fetchBooks = () => {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Cannot find Books.");
       }
       return response.json();
     })
@@ -23,7 +23,7 @@ const fetchMovies = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Cannot find movies");
         }
         return response.json();
       })
@@ -39,7 +39,7 @@ const fetchMovies = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Cannot find characters");
         }
         return response.json();
       })
@@ -55,7 +55,7 @@ const fetchMovies = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Book not found.");
         }
         return response.json();
       })
@@ -71,7 +71,7 @@ const fetchMovies = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Movie not found.");
         }
         return response.json();
       })
@@ -87,7 +87,7 @@ const fetchMovies = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Character not found");
         }
         return response.json();
       })
