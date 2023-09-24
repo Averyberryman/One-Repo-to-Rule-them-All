@@ -17,6 +17,7 @@ Easily view and search for Middle Earth's lore, characters, books, and movies wi
 - **Search Functionality**: Search for specific characters, books, or movies.
 - **Responsive UI**: Crafted to be mobile-friendly and accessible on all devices.
 - **Regular Updates**: Content is regularly updated to include the latest findings and clarifications from the Tolkien community.
+- **Favorites Page**: Save your favorite items to a separate page so you can read up on interesting lore later!
 
 ## Requirements
 
