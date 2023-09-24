@@ -2,10 +2,8 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {
@@ -35,7 +33,7 @@
   background-color: rgba(10, 59, 10, 0.611);
   opacity: 100%;
   color: gold;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .navbar a {
@@ -59,7 +57,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   gap: 2rem;
-  background-image: url("https://cdna.artstation.com/p/assets/images/images/052/615/540/large/aditya-singh-ring-232.jpg?1660238571"); /* Add this if you're using a background image */
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/052/615/540/large/aditya-singh-ring-232.jpg?1660238571");
   background-color: #f3f3f3;
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,13 +105,13 @@
   margin: 0 auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  width: 100vw;       
-  height: 100vh;      
-  margin: 0;          
-  padding: 0;         
-  overflow-y: auto;   
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
   background-color: #282c34;
-  color: white
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -162,8 +160,8 @@ body {
 }
 
 .favorite-button {
-  background-color: #333; 
-  color: #fff;            
+  background-color: #333;
+  color: #fff;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -179,12 +177,56 @@ body {
   margin: 0 auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  width: 100vw;       
-  height: 100vh;      
-  margin: 0;          
-  padding: 0;         
-  overflow-y: auto;   
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
   background-color: #282c34;
-  color: white
+  color: white;
 }
 
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+  }
+  
+  .App-body {
+    flex-direction: column;
+  }
+
+  .book-container,
+  .movies-container,
+  .character-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .movie-detail-container,
+  .book-detail-container,
+  .character-detail-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .search-component input {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header h1 {
+    font-size: 24px;
+  }
+
+  .navbar a {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .search-component input {
+    width: 85% !important;
+  }
+}
