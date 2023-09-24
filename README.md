@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 ## Deployable Link:
-!(https://one-repo-to-rule-them-dpuuw5atx-averyberryman.vercel.app/)
+[link](https://one-repo-to-rule-them-dpuuw5atx-averyberryman.vercel.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
