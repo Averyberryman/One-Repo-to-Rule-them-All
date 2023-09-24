@@ -11,6 +11,7 @@ import CharacterDetail from "./Components/CharacterDetails/CharacterDetails";
 import BookDetail from "./Components/BookDetails/BookDetails";
 import SearchComponent from "./Components/Search/Search";
 import FavoritesPage from "./Components/FavoritesPage/FavoritesPage";
+import ErrorComponent from "./Components/ErrorPage/ErrorPage";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -110,6 +111,7 @@ function App() {
               />
             }
           />
+          <Route path="*" element={<ErrorComponent message="Page not found." />} />
         </Routes>
       </div>
     </Router>
