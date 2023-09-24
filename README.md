@@ -1,73 +1,43 @@
-# Getting Started with Create React App
+# 📖 RINGBASE
 
-## Deployable Link:
-[The One Repo to Rule Them All](https://one-repo-to-rule-them-dpuuw5atx-averyberryman.vercel.app/)
+Easily view and search for Middle Earth's lore, characters, books, and movies with RINGBASE. Dive deep into the world of Tolkien and never miss out on any detail from the realm.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed Link
+[Ringbase](https://one-repo-to-rule-them-all.vercel.app/)
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+![Ringbase Demo](https://user-images.githubusercontent.com/123911665/270182144-5a96f500-20c1-4eba-a413-574d74941f20.png)
+![Search](https://user-images.githubusercontent.com/123911665/270182258-7c46a1c2-019d-49e6-a3f3-98375bb8414d.png)
+![Movie, Character, or Book Details](https://user-images.githubusercontent.com/123911665/270182167-b09cd0c4-f1ff-4d84-9303-0bc2ef3e02da.png)
+![Favorites](https://user-images.githubusercontent.com/123911665/270182328-5f51900c-186b-4ba7-9290-31c2108d5550.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Character Profiles**: Browse through Middle Earth's inhabitants to learn more about their stories!
+- **Search Functionality**: Search for specific characters, books, or movies.
+- **Responsive UI**: Crafted to be mobile-friendly and accessible on all devices.
+- **Regular Updates**: Content is regularly updated to include the latest findings and clarifications from the Tolkien community.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Requirements
 
-### `npm test`
+- Node.js v14 or newer
+- TypeScript v4 or newer
+- An internet connection for fetching Middle Earth data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Testing
 
-### `npm run build`
+The app uses Cypress for end-to-end testing to ensure all functionalities are working as expected. There are tests available for:
+- Displaying all characters
+- Showcasing details of books and movies
+- Handling various types of errors correctly
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository to your local machine.
+2. Install the necessary dependencies by running `npm install`.
+3. Fire up the development server using `npm start`.
+4. To run tests, use `npm run cypress`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributors
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Avery Berryman
