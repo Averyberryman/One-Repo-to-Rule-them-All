@@ -1,28 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import ErrorComponent from "../ErrorPage/ErrorPage";
 import './AllMovies.css';
 import PropTypes from 'prop-types';
-import { fetchMovies } from "../../APICalls";
 
-function AllMovies({ favoriteIds, onToggleFavorite }) {
-    const [movies, setMovies] = useState([]);
-    const [error, setError] = useState(null);
+function AllMovies({ movies, favoriteIds, onToggleFavorite }) {
 
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          const data = await fetchMovies();
-          setMovies(data);
-        } catch (error) {
-          setError(error.message);
-        }
-      }
-      fetchData();
-    }, []);
-
-    if (error) {
-        return <ErrorComponent message={error} />;
+    if (!movies) {
+        return <ErrorComponent message="No movies available." />;
     }
 
     return (
@@ -38,8 +23,9 @@ function AllMovies({ favoriteIds, onToggleFavorite }) {
 }
 
 AllMovies.propTypes = {
+    movies: PropTypes.array.isRequired,
     favoriteIds: PropTypes.object.isRequired,
     onToggleFavorite: PropTypes.func.isRequired
 };
-  
+
 export default AllMovies;
